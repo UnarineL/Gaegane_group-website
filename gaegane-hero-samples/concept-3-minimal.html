@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Concept 3 — Minimal Luxury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    body{background:#f3eee7}
+    .hero{padding:34px 0 66px}
+    .hero-shell{display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch}
+    .left-wrap{padding:70px 0 30px}
+    .left-wrap h1{max-width:680px}
+    .arch-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:16px;margin-top:34px}
+    .arch-card{padding:24px}
+    .tone-block{min-height:190px;border-radius:24px;background:
+      linear-gradient(135deg,#f5f0ea,#ebe2d5 55%,#ddd0be);
+      border:1px solid rgba(0,0,0,.08)}
+    .right-wrap{padding:18px}
+    .showcase{min-height:620px;border-radius:30px;padding:18px;background:#fff;border:1px solid rgba(0,0,0,.08);box-shadow:0 22px 60px rgba(0,0,0,.08)}
+    .inner{height:100%;border-radius:24px;border:1px solid rgba(0,0,0,.08);display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;background:linear-gradient(180deg,#fbf8f3,#f1ebe3)}
+    .topbar{padding:18px 22px;border-bottom:1px solid rgba(0,0,0,.08);display:flex;justify-content:space-between;align-items:center}
+    .magazine{padding:28px;display:grid;align-content:center;gap:18px}
+    .magazine h3{font-size:2.35rem;line-height:1.02;margin:0}
+    .editorial{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .editorial .tile{padding:22px;border-radius:22px;background:#fff;border:1px solid rgba(0,0,0,.08)}
+    .bottom-band{padding:18px 22px;border-top:1px solid rgba(0,0,0,.08);display:flex;gap:18px;flex-wrap:wrap}
+    .bottom-band span{color:#6f6a63;font-weight:600}
+    @media (max-width:980px){.hero-shell,.arch-grid,.editorial{grid-template-columns:1fr}.showcase{min-height:460px}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark">G</span><span>Gaegane Group<br><small>Concept 3 — Minimal Luxury</small></span></a>
+      <nav class="nav-links">
+        <a href="concept-1-corporate.html">Concept 1</a>
+        <a href="concept-2-bold.html">Concept 2</a>
+        <a class="active" href="concept-3-minimal.html">Concept 3</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-shell">
+      <section class="left-wrap">
+        <span class="eyebrow">Architectural & refined</span>
+        <h1>Designed. Built. Delivered with care, quality, and clarity.</h1>
+        <p>This direction is softer, cleaner, and more design-led. It is ideal if the client wants the website to feel premium, calm, and visually refined while still presenting construction capability.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#">Start Your Project</a>
+          <a class="btn btn-secondary" href="#">View Portfolio</a>
+        </div>
+
+        <div class="arch-grid">
+          <div class="card arch-card">
+            <span class="eyebrow" style="margin-bottom:8px">Approach</span>
+            <p>Turnkey project delivery from concept to completion with attention to functionality, comfort, and long-term value.</p>
+          </div>
+          <div class="tone-block"></div>
+        </div>
+      </section>
+
+      <section class="right-wrap card">
+        <div class="showcase">
+          <div class="inner">
+            <div class="topbar">
+              <strong>Gaegane Group</strong>
+              <span style="color:#6f6a63">Private residences · Selected work</span>
+            </div>
+            <div class="magazine">
+              <span class="eyebrow">Refined living spaces</span>
+              <h3>Homes and spaces shaped around people, comfort, and quality craftsmanship.</h3>
+              <div class="editorial">
+                <div class="tile">
+                  <strong>Interior Design</strong>
+                  <p>Centered around people, atmosphere, and meaningful spaces that respond well to context.</p>
+                </div>
+                <div class="tile">
+                  <strong>Plumbing & Maintenance</strong>
+                  <p>Presented as a dependable support service that keeps essential systems functioning properly.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bottom-band">
+              <span>Quality at its best</span>
+              <span>Integrity & fairness</span>
+              <span>Customer service</span>
+              <span>Safety</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

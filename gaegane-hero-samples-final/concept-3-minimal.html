@@ -1,37 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Gaegane Group — Luxury</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Concept 3 — Minimal Luxury</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="shared.css?v=5">
+<link rel="stylesheet" href="shared.css?v=2">
 
 <style>
 body{background:var(--bg)}
 
 .hero{padding:36px 0 68px}
-
-.hero-shell{
-  display:grid;
-  grid-template-columns:1.04fr .96fr;
-  gap:24px;
-}
-
+.hero-shell{display:grid;grid-template-columns:1.04fr .96fr;gap:24px;align-items:stretch}
 .left-wrap{padding:70px 0 24px}
+.left-wrap h1{max-width:700px}
 
-.notes{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-  margin-top:30px;
-}
-
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
 .note{padding:22px}
 
 .showcase{padding:18px}
@@ -43,157 +30,133 @@ body{background:var(--bg)}
   border:1px solid var(--line);
   display:grid;
   grid-template-rows:320px 1fr;
-  background:var(--surface);
+  background:var(--surface)
 }
 
-.top-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
+.top-image{position:relative}
+.top-image img{width:100%;height:100%;object-fit:cover}
+
+.top-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.16))
 }
 
 .bottom{
   padding:28px;
   display:grid;
+  align-content:center;
   gap:18px;
-
   background:linear-gradient(
     180deg,
     var(--surface),
     rgba(199,179,153,.15)
-  );
+  )
 }
 
-.editorial{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
+.bottom h3{font-size:2.15rem;line-height:1.04;margin:0}
+
+.editorial{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 
 .tile{
   padding:20px;
   border-radius:22px;
   background:rgba(199,179,153,.08);
-  border:1px solid var(--line);
+  border:1px solid var(--line)
 }
 
+.tile strong{display:block;color:var(--text);margin-bottom:8px}
+
 @media (max-width:980px){
-  .hero-shell,.notes,.editorial{
-    grid-template-columns:1fr;
-  }
+  .hero-shell,.notes,.editorial{grid-template-columns:1fr}
+  .inner{min-height:480px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="container nav">
-
-    <a class="brand" href="#">
-      <img src="images/gaegane-logo.png" alt="Gaegane Group Logo">
-      <span>
-        Gaegane Group<br>
-        <small>Construction & Interior Specialists</small>
-      </span>
+    <a class="brand" href="index.html">
+      <span class="brand-mark">G</span>
+      <span>Gaegane Group<br><small>Concept 3 — Minimal Luxury</small></span>
     </a>
 
     <nav class="nav-links">
-      <a class="active" href="#">Home</a>
+      <a href="#">Home</a>
       <a href="#">About Us</a>
       <a href="#">Gallery</a>
       <a href="#">Contact Us</a>
     </nav>
-
   </div>
 </header>
 
-<!-- HERO -->
 <main class="hero">
   <div class="container hero-shell">
 
-    <!-- LEFT -->
     <section class="left-wrap">
-
-      <span class="eyebrow">Turnkey Construction & Design</span>
+      <span class="eyebrow">Architectural & refined</span>
 
       <h1>
-        Delivering complete building solutions from concept to completion with quality, integrity, and precision.
+        Designed, built, and delivered with quality, comfort, and timeless style.
       </h1>
 
       <p>
-        Gaegane Construction Group provides turnkey solutions across residential and commercial projects — from new builds and renovations to interior design and infrastructure development, ensuring a seamless and stress-free client journey.
+        This direction uses a softer and more design-led presentation. It is ideal if the client wants the website to feel premium, calm, and visually refined while still showing construction capability.
       </p>
 
       <div class="btn-row">
         <a class="btn btn-primary" href="#">Start Your Project</a>
-        <a class="btn btn-secondary" href="#">View Our Work</a>
+        <a class="btn btn-secondary" href="#">View Portfolio</a>
       </div>
 
       <div class="notes">
-
-        <div class="card note">
-          <span class="eyebrow" style="margin-bottom:8px">Construction</span>
-          <p>
-            From foundation to completion, we deliver efficient, cost-effective building solutions that transform spaces into functional homes and productive work environments.
-          </p>
-        </div>
-
         <div class="card note">
           <span class="eyebrow" style="margin-bottom:8px">Interior Design</span>
-          <p>
-            People-centered environments designed to enhance comfort, atmosphere, and architectural meaning while reducing environmental impact.
-          </p>
+          <p>People-centered spaces positioned around comfort, atmosphere, and meaningful architecture.</p>
         </div>
 
+        <div class="card note">
+          <span class="eyebrow" style="margin-bottom:8px">Private Residences</span>
+          <p>Showcases the more premium residential side of the brand through refined interiors and luxurious finishes.</p>
+        </div>
       </div>
-
     </section>
 
-    <!-- RIGHT -->
     <section class="card showcase">
-
       <div class="inner">
 
         <div class="top-image">
-          <img src="images/river-bedroom.jpg" alt="Gaegane premium residence interior">
+          <img src="images/river-bedroom.jpg" alt="">
         </div>
 
         <div class="bottom">
-
-          <span class="eyebrow">Selected Residential Work</span>
+          <span class="eyebrow">Selected residential work</span>
 
           <h3>
-            Timeless spaces designed to enhance lifestyle, comfort, and architectural expression.
+            Spaces shaped around people, detail, and a strong sense of place.
           </h3>
 
           <div class="editorial">
-
             <div class="tile">
               <strong>House Africa</strong>
-              <span>
-                Open-plan luxury bedroom design with warm tones and a seamless connection between living and bathroom spaces.
-              </span>
+              <span>Warm tones, open-plan bedroom concepts, and softer residential styling.</span>
             </div>
 
             <div class="tile">
               <strong>River Residence</strong>
-              <span>
-                A luxurious open-plan home featuring unique architectural elements and a refined, timeless living experience.
-              </span>
+              <span>Open-plan luxury, distinctive architectural elements, and timeless visual appeal.</span>
             </div>
-
           </div>
 
           <p>
-            Each project reflects our commitment to quality, attention to detail, and delivering spaces that embody both functionality and elegance.
+            This concept is best if the client wants the website to feel more architectural, premium, and design-conscious while still rooted in the company’s real project work.
           </p>
-
         </div>
 
       </div>
-
     </section>
 
   </div>

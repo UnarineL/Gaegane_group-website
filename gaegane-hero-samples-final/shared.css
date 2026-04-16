@@ -1,19 +1,15 @@
 :root{
-  --bg:#ffffff;
+  --bg:#f6f1ea;
   --surface:#ffffff;
-  --text:#000000;
+  --text:#171411;
   --muted:#6f665e;
-  --line:rgba(0,0,0,.08);
-
-  /* BRAND COLORS (EXACT) */
-  --brand:#731012;
-  --brand-2:#c7b399;
-
-  --dark:#000000;
+  --line:rgba(23,20,17,.08);
+  --brand:#7c0f14;
+  --brand-2:#b56c4b;
+  --dark:#121111;
   --shadow:0 24px 60px rgba(0,0,0,.10);
   --radius:28px;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text)}

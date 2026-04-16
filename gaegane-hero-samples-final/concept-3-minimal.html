@@ -3,318 +3,347 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Gaegane Group | Infrastructure & Development</title>
+<title>Gaegane Group</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* ================== ROOT ================== */
-:root{
-  --bg:#f6f1ea;
-  --surface:#ffffff;
-  --text:#171411;
-  --muted:#6f665e;
-  --line:rgba(23,20,17,.08);
-  --brand:#731012;
+:root {
+  --black:#000;
+  --maroon:#731012;
   --gold:#c7b399;
-  --shadow:0 24px 60px rgba(0,0,0,.10);
-  --radius:26px;
+  --white:#fff;
 }
 
-*{
-  box-sizing:border-box;
-  transition:all .25s ease;
-}
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+body{color:var(--black);}
 
-body{
-  margin:0;
-  font-family:Inter, sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
-
-/* ================== HEADER ================== */
-.site-header{
-  position:sticky;
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  width:100%;
   top:0;
-  z-index:50;
-  background:rgba(255,255,255,.85);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-
-.nav{
+  left:0;
+  padding:18px 8%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 20px;
-  max-width:1200px;
-  margin:auto;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-.brand{
+.logo{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
+  color:white;
+  font-weight:700;
 }
 
-.brand img{
-  height:42px;
-}
+.logo img{height:34px;}
 
-.brand strong{
-  font-size:1.1rem;
-}
-
-.brand small{
-  display:block;
-  font-size:.8rem;
-  color:var(--muted);
-}
-
-.nav-links{
+nav{
   display:flex;
-  gap:14px;
+  gap:30px;
 }
 
-.nav-links a{
-  padding:10px 14px;
-  border-radius:999px;
-  font-weight:600;
-  color:var(--muted);
-}
-
-.nav-links a:hover{
-  background:#fff;
-  color:var(--text);
-  box-shadow:0 6px 20px rgba(0,0,0,.08);
-}
-
-/* ================== HERO ================== */
-.hero{
-  padding:100px 20px;
+nav a{
+  color:white;
+  text-decoration:none;
   position:relative;
-  overflow:hidden;
+  font-weight:500;
 }
 
-.hero::after{
+nav a::after{
   content:"";
   position:absolute;
-  width:600px;
-  height:600px;
-  background:radial-gradient(circle, rgba(199,179,153,0.25), transparent);
-  top:-100px;
-  right:-100px;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--gold);
+  transition:.3s;
 }
 
-.hero-content{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:40px;
+nav a:hover::after{
+  width:100%;
 }
 
-h1{
-  font-size:clamp(2.5rem,5vw,4.8rem);
-  line-height:1.05;
+/* MOBILE MENU */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  color:white;
+  cursor:pointer;
 }
 
-p{
-  color:var(--muted);
-  line-height:1.7;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 22px;
-  border-radius:999px;
-  font-weight:700;
-  margin-top:15px;
-}
-
-.btn-primary{
-  background:linear-gradient(135deg,var(--brand),#5c0d10);
-  color:#fff;
-}
-
-.btn-primary:hover{
-  transform:translateY(-2px);
-}
-
-/* ================== CARDS ================== */
-.card{
-  background:rgba(255,255,255,.85);
-  border-radius:var(--radius);
-  padding:20px;
-  border:1px solid var(--line);
-  box-shadow:var(--shadow);
-}
-
-.card:hover{
-  transform:translateY(-6px);
-}
-
-/* ================== SECTION ================== */
-.section{
-  padding:80px 20px;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-}
-
-/* ================== GRID ================== */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:260px;
+  height:100%;
+  background:black;
+  padding:40px 20px;
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
   gap:20px;
 }
 
-/* ================== UPLOAD ================== */
-.upload-box{
-  border:2px dashed var(--line);
-  padding:20px;
-  text-align:center;
-  border-radius:20px;
+.mobile-menu.open{right:0;}
+
+.mobile-menu a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
 }
 
-/* ================== FOOTER ================== */
-.footer{
-  padding:40px;
-  text-align:center;
-  border-top:1px solid var(--line);
-  color:var(--muted);
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("images/project1.jpg") center/cover;
+  display:flex;
+  align-items:center;
+  padding:0 8%;
+  color:white;
 }
 
-/* ================== MOBILE ================== */
+.hero-content{
+  max-width:700px;
+}
+
+.hero small{
+  color:var(--gold);
+  letter-spacing:2px;
+  font-weight:600;
+}
+
+.hero h1{
+  font-size:54px;
+  margin:20px 0;
+  line-height:1.2;
+}
+
+.hero p{
+  color:#ddd;
+  margin-bottom:30px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--maroon);
+  color:white;
+  padding:14px 24px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.btn-primary:hover{opacity:.9;}
+
+.btn-secondary{
+  border:1px solid white;
+  padding:14px 24px;
+  text-decoration:none;
+  color:white;
+}
+
+/* ================= SECTION ================= */
+.section{
+  padding:100px 8%;
+}
+
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.split img{
+  width:100%;
+  border-radius:6px;
+}
+
+.split h2{
+  margin-bottom:15px;
+  font-size:32px;
+}
+
+.split p{
+  color:#555;
+  margin-bottom:20px;
+}
+
+/* ================= VALUES ================= */
+.values{
+  background:#f7f7f7;
+  text-align:center;
+}
+
+.values h2{
+  margin-bottom:40px;
+}
+
+.value-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+.value{
+  padding:30px;
+}
+
+.value h3{
+  color:var(--maroon);
+  margin-bottom:10px;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:var(--black);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.cta h2{
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+/* ================= MOBILE ================= */
 @media(max-width:900px){
-  .hero-content{
-    grid-template-columns:1fr;
-  }
-  .grid{
-    grid-template-columns:1fr;
-  }
-  .nav-links{
-    display:none;
-  }
-}
 
+  nav{display:none;}
+
+  .menu-toggle{display:block;}
+
+  .hero h1{font-size:34px;}
+
+  .split{grid-template-columns:1fr;}
+
+  .value-grid{grid-template-columns:1fr;}
+}
 </style>
 </head>
 
 <body>
 
 <!-- HEADER -->
-<header class="site-header">
-  <div class="nav">
-    <div class="brand">
-      <!-- LOGO UPLOAD -->
-      <img src="images/logo.png" alt="Logo">
-      <div>
-        <strong>Gaegane Group</strong>
-        <small>Infrastructure & Development</small>
-      </div>
-    </div>
-
-    <div class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About Us</a>
-      <a href="#">Gallery</a>
-      <a href="#">Contact Us</a>
-    </div>
+<header>
+  <div class="logo">
+    <img src="images/logo.png">
+    Gaegane Group
   </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact Us</a>
+  </nav>
+
+  <div class="menu-toggle" id="menuToggle">☰</div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Gallery</a>
+  <a href="#">Contact Us</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
+    <small>TURNKEY PROJECT DELIVERY</small>
+
+    <h1>
+      Delivering construction solutions from
+      concept to completion.
+    </h1>
+
+    <p>
+      Gaegane Group provides infrastructure development,
+      construction, interior design, and plumbing services
+      built on quality, safety, and trusted execution.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#" class="btn-primary">Request a Quote</a>
+      <a href="#" class="btn-secondary">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION -->
+<section class="section">
+  <div class="split">
+    <img src="images/project2.jpg">
 
     <div>
-      <h1>From concept to completion — a structured journey you can trust.</h1>
+      <h2>Structured delivery you can rely on</h2>
       <p>
-        We deliver infrastructure development, residential and commercial projects,
-        interior solutions, and plumbing services with a focus on quality, reliability,
-        and guided execution from start to finish.
+        Our process is built around clarity, planning, and execution.
+        Every project is approached with discipline and attention
+        to detail from start to finish.
       </p>
-
-      <a href="#" class="btn btn-primary">Start Your Project</a>
+      <p>
+        We focus on delivering consistent results across residential
+        and commercial developments.
+      </p>
     </div>
-
-    <div class="card">
-      <h3>Project Journey</h3>
-      <p>Concept → Planning → Build → Completion</p>
-
-      <div class="upload-box">
-        <p><strong>Upload Project Image</strong></p>
-        <input type="file" />
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section">
-  <div class="container">
+<!-- VALUES -->
+<section class="section values">
+  <h2>What we stand for</h2>
 
-    <h2>Our Services</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Infrastructure Development</h3>
-        <p>Structured execution of large-scale projects with quality and control.</p>
-      </div>
-
-      <div class="card">
-        <h3>Residential & Commercial</h3>
-        <p>End-to-end construction for homes and commercial environments.</p>
-      </div>
-
-      <div class="card">
-        <h3>Interior & Plumbing</h3>
-        <p>Detail-focused finishes and reliable plumbing solutions.</p>
-      </div>
+  <div class="value-grid">
+    <div class="value">
+      <h3>Integrity</h3>
+      <p>Transparent processes and honest delivery.</p>
     </div>
 
+    <div class="value">
+      <h3>Safety</h3>
+      <p>Commitment to safe and responsible execution.</p>
+    </div>
+
+    <div class="value">
+      <h3>Quality</h3>
+      <p>Delivering work that meets high standards.</p>
+    </div>
   </div>
 </section>
 
-<!-- LOGO + IMAGES PLACEHOLDER -->
-<section class="section">
-  <div class="container">
-
-    <h2>Brand & Visual Assets</h2>
-
-    <div class="grid">
-      <div class="card upload-box">
-        <p><strong>Upload Logo</strong></p>
-        <input type="file" />
-      </div>
-
-      <div class="card upload-box">
-        <p><strong>Upload Gallery Images</strong></p>
-        <input type="file" multiple />
-      </div>
-
-      <div class="card">
-        <h3>Our Approach</h3>
-        <p>
-          Built on integrity, safety, and quality — ensuring every project
-          meets expectations from start to finish.
-        </p>
-      </div>
-    </div>
-
-  </div>
+<!-- CTA -->
+<section class="cta">
+  <h2>Start your project with confidence</h2>
+  <p>Let’s bring your vision to life with a structured approach.</p>
 </section>
 
-<!-- FOOTER -->
-<footer class="footer">
-  <p>© 2026 Gaegane Group — Built with structure, precision, and trust.</p>
-</footer>
+<!-- SCRIPT -->
+<script>
+const toggle = document.getElementById("menuToggle");
+const menu = document.getElementById("mobileMenu");
+
+toggle.addEventListener("click", ()=>{
+  menu.classList.toggle("open");
+});
+</script>
 
 </body>
 </html>

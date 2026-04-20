@@ -1,92 +1,156 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Concept 3 — Minimal Luxury</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Concept_3.css">
+
 <style>
-body{background:#ffffff}
 .hero{padding:36px 0 68px}
-.hero-shell{display:grid;grid-template-columns:1.04fr .96fr;gap:24px;align-items:stretch}
+
+.hero-shell{
+  display:grid;
+  grid-template-columns:1.04fr .96fr;
+  gap:24px;
+}
+
 .left-wrap{padding:70px 0 24px}
-.left-wrap h1{max-width:700px}
 .notes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
+
 .note{padding:22px}
+
 .showcase{padding:18px}
-.inner{min-height:620px;border-radius:28px;overflow:hidden;border:1px solid rgba(0,0,0,.08);display:grid;grid-template-rows:320px 1fr;background:#fff}
-.top-image{position:relative}
-.top-image img{width:100%;height:100%;object-fit:cover}
-.top-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(0,0,0,.16))}
-.bottom{padding:28px;display:grid;align-content:center;gap:18px;background:linear-gradient(180deg,#fff,#f8f3ed)}
-.bottom h3{font-size:2.15rem;line-height:1.04;margin:0}
-.editorial{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.tile{padding:20px;border-radius:22px;background:#fbf8f4;border:1px solid rgba(0,0,0,.08)}
-.tile strong{display:block;color:var(--text);margin-bottom:8px}
-@media (max-width:980px){.hero-shell,.notes,.editorial{grid-template-columns:1fr}.inner{min-height:480px}}
+
+.inner{
+  min-height:620px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.08);
+  display:grid;
+  grid-template-rows:320px 1fr;
+}
+
+.top-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.bottom{
+  padding:28px;
+  display:grid;
+  gap:18px;
+}
+
+.editorial{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.tile{
+  padding:20px;
+  border-radius:22px;
+  background:#fafafa;
+  border:1px solid rgba(0,0,0,.08);
+}
+
+@media (max-width:980px){
+  .hero-shell,.notes,.editorial{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href="index.html"><span class="brand-mark">
-  <img src="images/logo.jpg" alt="Gaegane Group logo">
-    </span><span>Gaegane Group<br><small>Concept 3 — Minimal Luxury</small></span></a>
-    <nav class="nav-links">
-      <a href="concept-1-corporate.html">Concept 1</a>
-      <a href="concept-2-bold.html">Concept 2</a>
-      <a class="active" href="concept-3-minimal.html">Concept 3</a>
+
+    <a class="brand" href="index.html">
+      <span class="brand-mark">
+        <img src="images/logo.jpg" alt="Gaegane Group logo">
+      </span>
+    </a>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav class="nav-links" id="navMenu">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact Us</a>
     </nav>
+
   </div>
 </header>
 
 <main class="hero">
   <div class="container hero-shell">
+
     <section class="left-wrap">
       <span class="eyebrow">Architectural & refined</span>
       <h1>Thoughtfully designed and expertly delivered from concept to completion.</h1>
-      <p>This direction reflects a refined and calm approach, positioning Gaegane Group as a trusted partner that delivers quality construction with precision and care.</p>
+      <p>Gaegane Group delivers refined construction solutions with a strong focus on quality, precision, and client experience.</p>
+
       <div class="btn-row">
-        <a class="btn btn-primary" href="#">Start Your Project</a>
-        <a class="btn btn-secondary" href="#">View Portfolio</a>
+        <a class="btn btn-primary">Start Your Project</a>
+        <a class="btn btn-secondary">View Portfolio</a>
       </div>
+
       <div class="notes">
         <div class="card note">
-          <span class="eyebrow" style="margin-bottom:8px">Interior Design</span>
-          <p>People-centered spaces positioned around comfort, atmosphere, and meaningful architecture.</p>
+          <span class="eyebrow">Interior Design</span>
+          <p>Spaces designed around comfort and meaningful architecture.</p>
         </div>
+
         <div class="card note">
-          <span class="eyebrow" style="margin-bottom:8px">Private Residences</span>
-          <p>Showcases the more premium residential side of the brand through refined interiors and luxurious finishes.</p>
+          <span class="eyebrow">Private Residences</span>
+          <p>Premium homes crafted with detail and refined finishes.</p>
         </div>
       </div>
     </section>
 
     <section class="card showcase">
       <div class="inner">
+
         <div class="top-image">
-          <img src="images/river-bedroom.jpg" alt="Gaegane premium residence interior">
+          <img src="images/river-bedroom.jpg">
         </div>
+
         <div class="bottom">
           <span class="eyebrow">Selected residential work</span>
           <h3>Spaces shaped around people, detail, and a strong sense of place.</h3>
+
           <div class="editorial">
             <div class="tile">
               <strong>House Africa</strong>
-              <span>Warm tones, open-plan bedroom concepts, and softer residential styling.</span>
+              <span>Warm tones and soft residential styling.</span>
             </div>
+
             <div class="tile">
               <strong>River Residence</strong>
-              <span>Open-plan luxury, distinctive architectural elements, and timeless visual appeal.</span>
+              <span>Luxury architecture with timeless appeal.</span>
             </div>
           </div>
-          <p>This concept is best if the client wants the website to feel more architectural, premium, and design-conscious while still rooted in the company’s real project work.</p>
+
         </div>
       </div>
     </section>
+
   </div>
 </main>
+
+<script>
+function toggleMenu(){
+  document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
+
 </body>
 </html>

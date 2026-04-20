@@ -43,7 +43,7 @@ img{display:block;max-width:100%}
 }
 
 .nav{
-  min-height:78px;
+  height:78px; /* matches original concept */
   display:flex;
   align-items:center;
   justify-content:space-between;

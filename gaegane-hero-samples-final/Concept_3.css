@@ -58,13 +58,15 @@ img{display:block;max-width:100%}
 }
 
 .brand-mark{
-  width:110px;
-  height:auto;
+  height:42px; /* controls logo size */
+  display:flex;
+  align-items:center;
 }
 
 .brand-mark img{
-  width:100%;
-  height:auto;
+  height:100%;
+  width:auto;
+  object-fit:contain;
 }
 
 /* NAV LINKS */

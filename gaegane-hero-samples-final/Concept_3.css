@@ -62,14 +62,15 @@ p,li{
 }
 
 .brand-mark{
-  width:44px;
-  height:44px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  background:var(--primary);
-  color:#fff;
-  font-weight:900;
+  width:120px;
+  height:auto;
+  background:none;
+  padding:0;
+}
+
+.brand-mark img{
+  width:100%;
+  height:auto;
 }
 
 .brand small{

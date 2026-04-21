@@ -6,65 +6,10 @@
 
 <title>Concept 3 — Minimal Luxury</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Concept_3.css">
-
-<style>
-.hero{padding:36px 0 68px}
-
-.hero-shell{
-  display:grid;
-  grid-template-columns:1.04fr .96fr;
-  gap:24px;
-}
-
-.left-wrap{padding:70px 0 24px}
-.notes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:30px}
-
-.note{padding:22px}
-
-.showcase{padding:18px}
-
-.inner{
-  min-height:620px;
-  border-radius:28px;
-  overflow:hidden;
-  border:1px solid rgba(0,0,0,.08);
-  display:grid;
-  grid-template-rows:320px 1fr;
-}
-
-.top-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.bottom{
-  padding:28px;
-  display:grid;
-  gap:18px;
-}
-
-.editorial{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:16px;
-}
-
-.tile{
-  padding:20px;
-  border-radius:22px;
-  background:#fafafa;
-  border:1px solid rgba(0,0,0,.08);
-}
-
-@media (max-width:980px){
-  .hero-shell,.notes,.editorial{
-    grid-template-columns:1fr;
-  }
-}
-</style>
 </head>
 
 <body>
@@ -78,7 +23,11 @@
       </span>
     </a>
 
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu" onclick="toggleMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
     <nav class="nav-links" id="navMenu">
       <a href="#">Home</a>
@@ -93,34 +42,53 @@
 <main class="hero">
   <div class="container hero-shell">
 
-    <section class="left-wrap">
+    <section class="left-wrap reveal">
       <span class="eyebrow">Architectural & refined</span>
       <h1>Thoughtfully designed and expertly delivered from concept to completion.</h1>
       <p>Gaegane Group delivers refined construction solutions with a strong focus on quality, precision, and client experience.</p>
 
       <div class="btn-row">
-        <a class="btn btn-primary">Start Your Project</a>
-        <a class="btn btn-secondary">View Portfolio</a>
+        <a class="btn btn-primary" href="#">Start Your Project</a>
+        <a class="btn btn-secondary" href="#">View Portfolio</a>
       </div>
 
       <div class="notes">
-        <div class="card note">
-          <span class="eyebrow">Interior Design</span>
+        <div class="card note reveal">
+          <span class="eyebrow note-label">Interior Design</span>
           <p>Spaces designed around comfort and meaningful architecture.</p>
         </div>
 
-        <div class="card note">
-          <span class="eyebrow">Private Residences</span>
+        <div class="card note reveal">
+          <span class="eyebrow note-label">Private Residences</span>
           <p>Premium homes crafted with detail and refined finishes.</p>
         </div>
       </div>
     </section>
 
-    <section class="card showcase">
+    <section class="card showcase reveal">
       <div class="inner">
 
-        <div class="top-image">
-          <img src="images/river-bedroom.jpg">
+        <div class="top-image slider" id="heroSlider">
+          <div class="slides">
+            <div class="slide active">
+              <img src="images/river-bedroom.jpg" alt="Gaegane premium residence interior">
+            </div>
+            <div class="slide">
+              <img src="images/river-outdoor.jpg" alt="Gaegane luxury residential exterior">
+            </div>
+            <div class="slide">
+              <img src="images/diedericks-near.jpg" alt="Gaegane project in progress">
+            </div>
+          </div>
+
+          <button class="slide-btn prev" type="button" aria-label="Previous slide">&#10094;</button>
+          <button class="slide-btn next" type="button" aria-label="Next slide">&#10095;</button>
+
+          <div class="slider-dots" aria-label="Slideshow navigation">
+            <button class="dot active" type="button" aria-label="Go to slide 1"></button>
+            <button class="dot" type="button" aria-label="Go to slide 2"></button>
+            <button class="dot" type="button" aria-label="Go to slide 3"></button>
+          </div>
         </div>
 
         <div class="bottom">
@@ -128,17 +96,18 @@
           <h3>Spaces shaped around people, detail, and a strong sense of place.</h3>
 
           <div class="editorial">
-            <div class="tile">
+            <div class="tile reveal">
               <strong>House Africa</strong>
               <span>Warm tones and soft residential styling.</span>
             </div>
 
-            <div class="tile">
+            <div class="tile reveal">
               <strong>River Residence</strong>
               <span>Luxury architecture with timeless appeal.</span>
             </div>
           </div>
 
+          <p>This concept is best if the client wants the website to feel more architectural, premium, and design-conscious while still rooted in the company’s real project work.</p>
         </div>
       </div>
     </section>
@@ -146,10 +115,137 @@
   </div>
 </main>
 
+<section class="team-section">
+  <div class="container">
+    <div class="team-intro reveal">
+      <span class="eyebrow">Meet the Team</span>
+      <h2>The people behind the projects.</h2>
+      <p>A dedicated team committed to delivering quality work, trusted guidance, and a smooth experience from planning to completion.</p>
+    </div>
+
+    <div class="team-grid">
+      <article class="card team-card reveal">
+        <div class="team-image">
+          <img src="images/team.jpg" alt="Gaegane team member">
+        </div>
+        <div class="team-copy">
+          <h3>Project Lead</h3>
+          <p>Oversees project execution with a strong focus on planning, quality, and delivery.</p>
+        </div>
+      </article>
+
+      <article class="card team-card reveal">
+        <div class="team-image">
+          <img src="images/team.jpg" alt="Gaegane team member">
+        </div>
+        <div class="team-copy">
+          <h3>Design & Interiors</h3>
+          <p>Shapes refined, people-centered spaces that balance comfort, detail, and function.</p>
+        </div>
+      </article>
+
+      <article class="card team-card reveal">
+        <div class="team-image">
+          <img src="images/team.jpg" alt="Gaegane team member">
+        </div>
+        <div class="team-copy">
+          <h3>Site Operations</h3>
+          <p>Ensures works on site are completed safely, efficiently, and to a high standard.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Gaegane Group</strong>
+      <p>Guiding every project with quality, trust, and precision.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact Us</a>
+    </div>
+  </div>
+</footer>
+
 <script>
-function toggleMenu(){
-  document.getElementById("navMenu").classList.toggle("active");
+function toggleMenu(button){
+  const menu = document.getElementById("navMenu");
+  const isOpen = menu.classList.toggle("active");
+  button.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+const prevBtn = document.querySelector(".slide-btn.prev");
+const nextBtn = document.querySelector(".slide-btn.next");
+
+let currentSlide = 0;
+let sliderInterval;
+
+function showSlide(index){
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+    dots[i].classList.toggle("active", i === index);
+  });
+  currentSlide = index;
+}
+
+function nextSlide(){
+  const next = (currentSlide + 1) % slides.length;
+  showSlide(next);
+}
+
+function prevSlide(){
+  const prev = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(prev);
+}
+
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener("click", () => {
+    nextSlide();
+    resetSliderInterval();
+  });
+
+  prevBtn.addEventListener("click", () => {
+    prevSlide();
+    resetSliderInterval();
+  });
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    showSlide(index);
+    resetSliderInterval();
+  });
+});
+
+function startSlider(){
+  sliderInterval = setInterval(nextSlide, 5000);
+}
+
+function resetSliderInterval(){
+  clearInterval(sliderInterval);
+  startSlider();
+}
+
+startSlider();
+
+const revealElements = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("revealed");
+    }
+  });
+}, { threshold: 0.12 });
+
+revealElements.forEach(el => observer.observe(el));
 </script>
 
 </body>
